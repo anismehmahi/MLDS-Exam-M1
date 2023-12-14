@@ -38,7 +38,8 @@ Dans notre experimentation on a constaté que:
    - les principales variables caractéristiques du diabète sont : Hypertension artérielle, hypercholestérolémie, IMC, AVC, santé générale, santé mentale, santé physique, âge, niveau d'instruction et revenu.
    - Les variables caractéristiques qui augmentent le risque de diabète sont : Tabagisme et forte consommation d'alcool, accident vasculaire cérébral et maladie ou attaque cardiaque, pression artérielle élevée et taux de cholestérol élevé.
    - En raison du déséquilibre des données, le score de précision de base était trompeur, j'ai donc utilisé les bonnes mesures d'évaluation telles que la précision/spécificité, le rappel/sensibilité, le score F1 et l'AUC.
-   - Classement des modéle selons les resultats obtenues: 
+   - Classement des modéle selons les resultats obtenues:
+     
 | Modèle         | Précision (Accuracy) | F1-Macro | F1-Micro |
 | -------------- | -------------------- | -------- | -------- |
 | Xgboost        | 0.97                 | 0.95     | 0.97     |
