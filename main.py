@@ -19,12 +19,12 @@ pred : list of predicted labels
 
 
 from sklearn.metrics import accuracy_score, f1_score, recall_score, precision_score
-from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB
 import pandas as pd
 import pickle
 import warnings
 warnings.filterwarnings('ignore')
+
 
 
 
@@ -65,6 +65,7 @@ data = pd.read_csv('data/date_validation_diabetes_health_indicators.csv')
 data['Diabetes_012'] = data['Diabetes_012'].astype(int)
 
 X = data.drop(columns=['Diabetes_012','Unnamed: 0'], axis=1)
+
 y = data['Diabetes_012']
 
 
