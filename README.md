@@ -32,6 +32,8 @@ Ce projet vise à créer un modèle de classification du diabète en utilisant d
 - Clonez ce repo avec la commande :  `git clone https://github.com/anismehmahi/MLDS-Exam-M1.git`
 - Excuter le container avec la commande : `docker run --name (nom du container) -v (chemin absolue dans votre machine vers le repertoire models du repo):/app/models/ -p 5000:5000 diabetes-amsd`
 - Pour tester un nouveau modèle (dans le cas de la mise à jour des modèles), veuillez remplacer l'un des trois modèles dans le dossier local (models) par votre nouveau modèle (assurez-vous d'utiliser le même nom de fichier Pickle).
+![Fonctionnement du Volume Docker](https://github.com/anismehmahi/MLDS-Exam-M1/blob/main/volume-svg.drawio.png)
+
 
 ## Conclusion et remarques
 Dans notre experimentation on a constaté que:
