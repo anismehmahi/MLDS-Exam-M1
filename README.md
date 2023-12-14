@@ -32,7 +32,11 @@ Ce projet vise à créer un modèle de classification du diabète en utilisant d
 - Clonez ce repo avec la commande :  `git clone https://github.com/anismehmahi/MLDS-Exam-M1.git`
 - Excuter le container avec la commande : `docker run --name (nom du container) -v (chemin absolue dans votre machine vers le repertoire models du repo):/app/models/ -p 5000:5000 diabetes-amsd`
 - Pour tester un nouveau modèle (dans le cas de la mise à jour des modèles), veuillez remplacer l'un des trois modèles dans le dossier local (models) par votre nouveau modèle (assurez-vous d'utiliser le même nom de fichier Pickle).
-![Fonctionnement du Volume Docker](https://github.com/anismehmahi/MLDS-Exam-M1/blob/main/volume-svg.drawio.png)
+
+
+<p align="center">
+  <img src="https://github.com/anismehmahi/MLDS-Exam-M1/blob/main/volume-svg.drawio.png" alt="Fonctionnement du Volume Docker">
+</p>
 
 
 ## Conclusion et remarques
@@ -41,6 +45,8 @@ Dans notre experimentation on a constaté que:
    - Les variables caractéristiques qui augmentent le risque de diabète sont : Tabagisme et forte consommation d'alcool, accident vasculaire cérébral et maladie ou attaque cardiaque, pression artérielle élevée et taux de cholestérol élevé.
    - En raison du déséquilibre des données, le score de précision de base était trompeur, j'ai donc utilisé les bonnes mesures d'évaluation telles que la précision/spécificité, le rappel/sensibilité, le score F1 et l'AUC.
    - Classement des modéle selons les resultats obtenues:
+<p align="center">
+
      
 | Modèle         | Précision (Accuracy) | F1-Macro | F1-Micro |
 | -------------- | -------------------- | -------- | -------- |
@@ -48,6 +54,6 @@ Dans notre experimentation on a constaté que:
 | Random Forest  | 0.92                 | 0.75     | 0.92     |
 | SVM            | 0.61                 | 0.42     | 0.61     |
 
-
+</p>
 
 
