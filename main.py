@@ -44,7 +44,7 @@ def classifier(mat, model):
         pred = model.predict(mat)
         
     elif model=='RF':
-        model = pickle.load(open("classification_model.pkl", "rb"))
+        model = pickle.load(open("models/modele_random_forest.pkl", "rb"))
         pred = model.predict(mat)
         
     elif model=='GBC':
@@ -60,7 +60,7 @@ def classifier(mat, model):
 
 
 # Import data
-data = pd.read_csv('data/validation_diabetes_health_indicators.csv')
+data = pd.read_csv('data/date_validation_diabetes_health_indicators.csv')
 data['Diabetes_012'] = data['Diabetes_012'].astype(int)
 
 X = data.drop(columns=['Diabetes_012'])
