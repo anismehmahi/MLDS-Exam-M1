@@ -23,7 +23,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB
 import pandas as pd
 import pickle
-
+import warnings
+warnings.filterwarnings('ignore')
 
 
 
@@ -63,7 +64,7 @@ def classifier(mat, model):
 data = pd.read_csv('data/date_validation_diabetes_health_indicators.csv')
 data['Diabetes_012'] = data['Diabetes_012'].astype(int)
 
-X = data.drop(columns=['Diabetes_012'])
+X = data.drop(columns=['Diabetes_012','Unnamed: 0'], axis=1)
 y = data['Diabetes_012']
 
 
@@ -77,7 +78,8 @@ for model in models:
 
     # Evaluate model results
     accuracy = accuracy_score(pred, y)
-    f1 = f1_score(pred, y, average='macro', zero_division=True)
+    f1_macro = f1_score(pred, y, average='macro', zero_division=True)
+    f1_micro = f1_score(pred, y, average='micro', zero_division=True)
 
     # Print results
-    print(f'Model: {model}\n-----\nAccuracy: {accuracy:.2f} \nF1_score: {f1:.2f} \n')
+    print(f'Model: {model}\n-----\nAccuracy: {accuracy:.2f} \nF1_macro: {f1_macro:.2f} \nF1_micro: {f1_micro:.2f} \n')
