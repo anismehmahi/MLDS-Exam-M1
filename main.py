@@ -67,39 +67,20 @@ data['Diabetes_012'] = data['Diabetes_012'].astype(int)
 X = data.drop(columns=['Diabetes_012','Unnamed: 0'], axis=1)
 
 y = data['Diabetes_012']
-while True:
-    choix = input('\nvoulez-vous choisir un modèle ou exécuter les 3 modèles (tapez "tous" ou "un" ou "quit" pour quitter): ')
 
-    if choix == 'un':
-        model = input('\nSVM, RF ou GBC ? ')
-        if model not in ['SVM', 'RF', 'GBC']:
-            print("\nPlease select one of the three methods : SVM, RF, GBC")
-            continue
-        pred = classifier(X, model)
 
-        accuracy = accuracy_score(pred, y)
-        f1_macro = f1_score(pred, y, average='macro', zero_division=True)
-        f1_micro = f1_score(pred, y, average='micro', zero_division=True)
 
-        # Print results
-        print(f'Model: {model}\n-----\nAccuracy: {accuracy:.2f} \nF1_macro: {f1_macro:.2f} \nF1_micro: {f1_micro:.2f} \n')
-    elif choix == 'tous':
-        # Predict labels using trained models
-        models = ['RF', 'GBC', 'SVM']
-        for model in models:
+# Predict labels using trained models
+models = ['RF', 'GBC','SVM']
+for model in models:
 
-            # Make prediction
-            pred = classifier(X, model)
+    # Make prediction
+    pred = classifier(X, model)
 
-            # Evaluate model results
-            accuracy = accuracy_score(pred, y)
-            f1_macro = f1_score(pred, y, average='macro', zero_division=True)
-            f1_micro = f1_score(pred, y, average='micro', zero_division=True)
+    # Evaluate model results
+    accuracy = accuracy_score(pred, y)
+    f1_macro = f1_score(pred, y, average='macro', zero_division=True)
+    f1_micro = f1_score(pred, y, average='micro', zero_division=True)
 
-            # Print results
-            print(f'Model: {model}\n-----\nAccuracy: {accuracy:.2f} \nF1_macro: {f1_macro:.2f} \nF1_micro: {f1_micro:.2f} \n')
-
-    elif choix == 'quit':
-        break
-    else:
-        print("\nPlease select one of the two choices : tous, un")
+    # Print results
+    print(f'Model: {model}\n-----\nAccuracy: {accuracy:.2f} \nF1_macro: {f1_macro:.2f} \nF1_micro: {f1_micro:.2f} \n')
